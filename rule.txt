@@ -1,0 +1,12 @@
+The `heuristics_v1` function is designed to pack a given set of items, each with specific dimensions, into bins of fixed dimensions. This can be seen as a 2D bin packing problem, where the goal is to place each item in a bin without exceeding the bin's width and height constraints.
+
+### Function Inputs
+
+1. **demand (np.ndarray)**: This is a NumPy array of shape `(n, 2)`, where `n` is the number of items. Each row of the array represents the dimensions `(width, height)` of an item.
+2. **capacities (Tuple[int, int])**: A tuple representing the dimensions of each bin, `(bin_width, bin_height)`.
+
+### Function Outputs
+
+- **List[List[Tuple[int, int, int]]]**: The function returns a list of bins, where each bin is a list of tuples. Each tuple in the bin list represents an item, in the form `(item_index, x_position, y_position)`:
+  - `item_index` is the index of the item in the original `demand` array.
+  - `x_position` and `y_position` are the coordinates of the item's bottom-left corner within the bin.
